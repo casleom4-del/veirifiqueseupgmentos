@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grid Centro Automotivo | Pneus e Serviços Automotivos</title>
+
+    <meta
+        name="description"
+        content="Grid Centro Automotivo em Caçador - SC. Pneus, manutenção mecânica, alinhamento, balanceamento, lubrificação e serviços automotivos."
+    >
+
+    <meta name="theme-color" content="#101820">
+
+    <style>
+        :root {
+            --primary: #e63946;
+            --primary-dark: #b91c2a;
+            --accent: #ffb703;
+            --dark: #101820;
+            --dark-2: #17212b;
+            --text: #52606d;
+            --light: #f5f7fa;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --green: #16a34a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+            color: var(--text);
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(16,24,32,.96);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        nav {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.35rem;
+            font-weight: 900;
+            letter-spacing: -.5px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .logo small {
+            display: block;
+            color: #94a3b8;
+            font-size: .62rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            font-weight: 600;
+            font-size: .93rem;
+            transition: .2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-cta {
+            padding: 11px 18px;
+            border-radius: 8px;
+            background: var(--primary);
+            color: white !important;
+        }
+
+        .menu {
+            display: none;
+            border: 0;
+            background: transparent;
+            color: white;
+            font-size: 1.7rem;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 790px;
+            padding-top: 78px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at 82% 25%,
+                    rgba(230,57,70,.28),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    120deg,
+                    #080d12 0%,
+                    #101820 50%,
+                    #1b2935 100%
+                );
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 650px;
+            height: 650px;
+            border: 1px solid rgba(255,183,3,.1);
+            border-radius: 50%;
+            right: -220px;
+            top: 90px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .tag {
+            display: inline-flex;
+            padding: 8px 14px;
+            border-radius: 30px;
+            background: rgba(230,57,70,.12);
+            border: 1px solid rgba(230,57,70,.28);
+            color: #ffb3b9;
+            font-size: .84rem;
+            font-weight: 800;
+            margin-bottom: 23px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 6vw, 5.2rem);
+            line-height: 1;
+            letter-spacing: -2.5px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-description {
+            max-width: 680px;
+            color: #cbd5e1;
+            font-size: 1.15rem;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 23px;
+            border-radius: 9px;
+            font-weight: 800;
+            transition: .25s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 12px 30px rgba(230,57,70,.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,.2);
+            background: rgba(255,255,255,.04);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,.1);
+        }
+
+        /* INFO */
+
+        .quick-info {
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 17px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(15,23,42,.13);
+        }
+
+        .quick-item {
+            padding: 28px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .quick-item:last-child {
+            border-right: 0;
+        }
+
+        .quick-icon {
+            font-size: 1.6rem;
+            margin-bottom: 7px;
+        }
+
+        .quick-item strong {
+            display: block;
+            color: var(--dark);
+            margin-bottom: 3px;
+        }
+
+        .quick-item span {
+            font-size: .88rem;
+            color: #718096;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-head {
+            max-width: 720px;
+            margin: 0 auto 55px;
+            text-align: center;
+        }
+
+        .label {
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: .8rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .section-head h2 {
+            color: var(--dark);
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        /* SOBRE */
+
+        .about {
+            background: var(--light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: var(--dark);
+            font-size: 2.5rem;
+            line-height: 1.12;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 17px;
+        }
+
+        .benefits {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .benefits li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 13px 0;
+            color: #334155;
+            font-weight: 700;
+        }
+
+        .check {
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #dcfce7;
+            color: var(--green);
+            font-size: .75rem;
+        }
+
+        .about-card {
+            min-height: 390px;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            border-radius: 22px;
+            overflow: hidden;
+            position: relative;
+            color: white;
+            background:
+                linear-gradient(
+                    160deg,
+                    rgba(16,24,32,.25),
+                    rgba(16,24,32,.96)
+                ),
+                linear-gradient(
+                    135deg,
+                    #263746,
+                    #101820
+                );
+            box-shadow: 0 25px 60px rgba(15,23,42,.16);
+        }
+
+        .about-card::before {
+            content: "🛞";
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 8rem;
+            opacity: .11;
+        }
+
+        .about-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 10px;
+        }
+
+        .about-card p {
+            color: #cbd5e1;
+        }
+
+        /* SERVICES */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .service {
+            padding: 32px;
+            border: 1px solid var(--border);
+            border-radius: 17px;
+            background: white;
+            transition: .25s;
+        }
+
+        .service:hover {
+            transform: translateY(-6px);
+            border-color: #fecdd3;
+            box-shadow: 0 20px 45px rgba(15,23,42,.08);
+        }
+
+        .service-icon {
+            width: 54px;
+            height: 54px;
+            display: grid;
+            place-items: center;
+            border-radius: 13px;
+            background: #fff1f2;
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service h3 {
+            color: var(--dark);
+            margin-bottom: 9px;
+        }
+
+        .service p {
+            font-size: .94rem;
+        }
+
+        /* PROCESS */
+
+        .process {
+            background: var(--dark);
+            color: white;
+        }
+
+        .process .section-head h2 {
+            color: white;
+        }
+
+        .process .section-head p {
+            color: #94a3b8;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .step {
+            padding: 28px;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 15px;
+            background: rgba(255,255,255,.025);
+        }
+
+        .step-number {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--primary);
+            font-weight: 900;
+            margin-bottom: 18px;
+        }
+
+        .step h3 {
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            color: #94a3b8;
+            font-size: .9rem;
+        }
+
+        /* DATA */
+
+        .data {
+            background: var(--light);
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .data-card {
+            padding: 8px 28px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 17px;
+        }
+
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 17px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-row:last-child {
+            border-bottom: 0;
+        }
+
+        .data-label {
+            color: var(--dark);
+            font-weight: 800;
+        }
+
+        .data-value {
+            text-align: right;
+        }
+
+        .active {
+            color: var(--green);
+            font-weight: 800;
+        }
+
+        /* CTA */
+
+        .cta {
+            padding: 85px 0;
+            background:
+                linear-gradient(
+                    135deg,
+                    #8f1722,
+                    #e63946,
+                    #c02635
+                );
+            color: white;
+        }
+
+        .cta-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .cta h2 {
+            font-size: clamp(2rem, 4vw, 3.1rem);
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            color: #ffe4e6;
+        }
+
+        .cta .btn {
+            background: white;
+            color: var(--primary-dark);
+            white-space: nowrap;
+        }
+
+        /* CONTACT */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .contact-card {
+            padding: 35px;
+            border: 1px solid var(--border);
+            border-radius: 17px;
+        }
+
+        .contact-card h3 {
+            color: var(--dark);
+            margin-bottom: 18px;
+        }
+
+        .contact-row {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contact-row:last-child {
+            border-bottom: 0;
+        }
+
+        .contact-row strong {
+            display: block;
+            color: var(--dark);
+            margin-bottom: 3px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 50px 0 25px;
+            background: #080d12;
+            color: #94a3b8;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 45px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .footer-logo {
+            color: white;
+            font-size: 1.35rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        footer h4 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin: 8px 0;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            padding-top: 25px;
+            text-align: center;
+            font-size: .85rem;
+        }
+
+        /* FLOATING */
+
+        .floating {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #25d366;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 30px rgba(37,211,102,.35);
+            transition: .25s;
+        }
+
+        .floating:hover {
+            transform: scale(1.08);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .menu {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 78px;
+                left: 0;
+                width: 100%;
+                padding: 22px;
+                flex-direction: column;
+                align-items: flex-start;
+                background: var(--dark);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .quick-grid,
+            .about-grid,
+            .services-grid,
+            .process-grid,
+            .data-grid,
+            .contact-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-item {
+                border-right: 0;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .quick-item:last-child {
+                border-bottom: 0;
+            }
+
+            .hero {
+                min-height: 700px;
+            }
+
+            .cta-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .data-row {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .data-value {
+                text-align: left;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+
+        <nav>
+
+            <a href="#inicio" class="logo">
+                GRID <span>CENTRO AUTOMOTIVO</span>
+                <small>Pneus • Mecânica • Serviços</small>
+            </a>
+
+            <button
+                class="menu"
+                id="menu"
+                aria-label="Abrir menu"
+            >
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#processo">Atendimento</a></li>
+                <li><a href="#contato" class="nav-cta">Contato</a></li>
+            </ul>
+
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="inicio">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <div class="tag">
+                    CENTRO AUTOMOTIVO • CAÇADOR / SC
+                </div>
+
+                <h1>
+                    Pneus, manutenção e
+                    <span>cuidado para o seu veículo.</span>
+                </h1>
+
+                <p class="hero-description">
+                    A Grid Centro Automotivo reúne pneus,
+                    serviços mecânicos e soluções automotivas
+                    para manter seu veículo seguro e preparado
+                    para a estrada.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#servicos" class="btn btn-primary">
+                        Conhecer serviços
+                    </a>
+
+                    <a href="#contato" class="btn btn-outline">
+                        Fale conosco
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- QUICK INFO -->
+
+    <section class="quick-info">
+
+        <div class="container">
+
+            <div class="quick-grid">
+
+                <div class="quick-item">
+                    <div class="quick-icon">🛞</div>
+                    <strong>Pneus</strong>
+                    <span>Comércio de pneumáticos e câmaras de ar</span>
+                </div>
+
+                <div class="quick-item">
+                    <div class="quick-icon">🔧</div>
+                    <strong>Centro automotivo</strong>
+                    <span>Serviços de manutenção e reparação</span>
+                </div>
+
+                <div class="quick-item">
+                    <div class="quick-icon">📍</div>
+                    <strong>Caçador - SC</strong>
+                    <span>Rodovia Fahdo Thome, 1736</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SOBRE -->
+
+    <section class="about" id="sobre">
+
+        <div class="container">
+
+            <div class="about-grid">
+
+                <div class="about-text">
+
+                    <div class="label">
+                        Sobre a Grid
+                    </div>
+
+                    <h2>
+                        Soluções automotivas para quem leva a estrada a sério.
+                    </h2>
+
+                    <p>
+                        A Grid Centro Automotivo Ltda atua em Caçador,
+                        Santa Catarina, com foco principal no comércio
+                        varejista de pneumáticos e câmaras de ar.
+                    </p>
+
+                    <p>
+                        A empresa também possui atividades relacionadas
+                        à manutenção mecânica, alinhamento e balanceamento,
+                        lavagem, lubrificação, polimento, peças e acessórios
+                        automotivos.
+                    </p>
+
+                    <ul class="benefits">
+
+                        <li>
+                            <span class="check">✓</span>
+                            Pneus e câmaras de ar
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Alinhamento e balanceamento
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Manutenção mecânica
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            Lavagem, lubrificação e polimento
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="about-card">
+
+                    <h3>
+                        Cuidado que começa nos pneus.
+                    </h3>
+
+                    <p>
+                        Do pneu à manutenção, a proposta é reunir
+                        diferentes soluções para o cuidado do veículo
+                        em um único centro automotivo.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SERVIÇOS -->
+
+    <section id="servicos">
+
+        <div class="container">
+
+            <div class="section-head">
+
+                <div class="label">
+                    Serviços
+                </div>
+
+                <h2>
+                    Tudo para manter seu veículo em dia
+                </h2>
+
+                <p>
+                    Conheça algumas das principais atividades
+                    relacionadas ao negócio da Grid Centro Automotivo.
+                </p>
+
+            </div>
+
+            <div class="services-grid">
+
+                <article class="service">
+
+                    <div class="service-icon">
+                        🛞
+                    </div>
+
+                    <h3>
+                        Pneus e câmaras de ar
+                    </h3>
+
+                    <p>
+                        Comércio varejista de pneumáticos e
+                        câmaras de ar para veículos automotores.
+                    </p>
+
+                </article>
+
+                <article class="service">
+
+                    <div class="service-icon">
+                        🔧
+                    </div>
+
+                    <h3>
+                        Manutenção mecânica
+                    </h3>
+
+                    <p>
+                        Serviços de manutenção e reparação
+                        mecânica de veículos automotores.
+                    </p>
+
+                </article>
+
+                <article class="service">
+
+                    <div class="service-icon">
+                        ⚙️
+                    </div>
+
+                    <h3>
+                        Alinhamento e balanceamento
+                    </h3>
+
+                    <p>
+                        Serviços de alinhamento e balanceamento
+                        para veículos automotores.
+                    </p>
+
+                </article>
+
+                <article class="service">
+
+                    <div class="service-icon">
+                        ✨
+                    </div>
+
+                    <h3>
+                        Lavagem e polimento
+                    </h3>
+
+                    <p>
+                        Serviços de lavagem, lubrificação e
+                        polimento de veículos.
+                    </p>
+
+                </article>
+
+                <article class="service">
+
+                    <div class="service-icon">
+                        🔩
+                    </div>
+
+                    <h3>
+                        Peças e acessórios
+                    </h3>
+
+                    <p>
+                        Comércio de peças e acessórios novos
+                        para veículos automotores.
+                    </p>
+
+                </article>
+
+                <article class="service">
+
+                    <div class="service-icon">
+                        🛢️
+                    </div>
+
+                    <h3>
+                        Lubrificantes
+                    </h3>
+
+                    <p>
+                        Comércio varejista de lubrificantes
+                        para uso automotivo.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROCESSO -->
+
+    <section class="process" id="processo">
+
+        <div class="container">
+
+            <div class="section-head">
+
+                <div
+                    class="label"
+                    style="color:#ff6b76"
+                >
+                    Atendimento
+                </div>
+
+                <h2>
+                    Na hora de cuidar do seu carro
+                </h2>
+
+                <p>
+                    Um atendimento organizado começa entendendo
+                    o que seu veículo precisa.
+                </p>
+
+            </div>
+
+            <div class="process-grid">
+
+                <div class="step">
+
+                    <div class="step-number">
+                        1
+                    </div>
+
+                    <h3>
+                        Avalie a necessidade
+                    </h3>
+
+                    <p>
+                        Identifique o serviço ou produto que
+                        você precisa para o seu veículo.
+                    </p>
+
+                </div>
+
+                <div class="step">
+
+                    <div class="step-number">
+                        2
+                    </div>
+
+                    <h3>
+                        Procure a equipe
+                    </h3>
+
+                    <p>
+                        Entre em contato ou vá até o centro
+                        automotivo para receber atendimento.
+                    </p>
+
+                </div>
+
+                <div class="step">
+
+                    <div class="step-number">
+                        3
+                    </div>
+
+                    <h3>
+                        Receba orientação
+                    </h3>
+
+                    <p>
+                        Converse com a equipe sobre a melhor
+                        solução para sua necessidade.
+                    </p>
+
+                </div>
+
+                <div class="step">
+
+                    <div class="step-number">
+                        4
+                    </div>
+
+                    <h3>
+                        Cuide do veículo
+                    </h3>
+
+                    <p>
+                        Realize o serviço necessário para
+                        manter seu veículo preparado.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DADOS -->
+
+    <section class="data" id="dados">
+
+        <div class="container">
+
+            <div class="section-head">
+
+                <div class="label">
+                    Informações empresariais
+                </div>
+
+                <h2>
+                    Dados da Grid Centro Automotivo
+                </h2>
+
+                <p>
+                    Informações cadastrais da empresa.
+                </p>
+
+            </div>
+
+            <div class="data-grid">
+
+                <div class="data-card">
+
+                    <div class="data-row">
+                        <span class="data-label">
+                            Razão social
+                        </span>
+
+                        <span class="data-value">
+                            Grid Centro Automotivo Ltda
+                        </span>
+                    </div>
+
+                    <div class="data-row">
+                        <span class="data-label">
+                            CNPJ
+                        </span>
+
+                        <span class="data-value">
+                            49.760.497/0001-35
+                        </span>
+                    </div>
+
+                    <div class="data-row">
+                        <span class="data-label">
+                            Situação
+                        </span>
+
+                        <span class="data-value active">
+                            ATIVA
+                        </span>
+                    </div>
+
+                    <div class="data-row">
+                        <span class="data-label">
+                            Abertura
+                        </span>
+
+                        <span class="data-value">
+                            01/03/2023
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="data-card">
+
+                    <div class="data-row">
+                        <span class="data-label">
+                            Natureza jurídica
+                        </span>
+
+                        <span class="data-value">
+                            Sociedade Empresária Limitada
+                        </span>
+                    </div>
+
+                    <div class="data-row">
+                        <span class="data-label">
+                            Porte
+                        </span>
+
+                        <span class="data-value">
+                            EPP
+                        </span>
+                    </div>
+
+                    <div class="data-row">
+                        <span class="data-label">
+                            Capital social
+                        </span>
+
+                        <span class="data-value">
+                            R$ 600.000,00
+                        </span>
+                    </div>
+
+                    <div class="data-row">
+                        <span class="data-label">
+                            Atividade principal
+                        </span>
+
+                        <span class="data-value">
+                            Comércio a varejo de pneumáticos
+                            e câmaras-de-ar
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <div class="cta-inner">
+
+                <div>
+
+                    <h2>
+                        Seu veículo precisa de atenção?
+                    </h2>
+
+                    <p>
+                        Conheça a Grid Centro Automotivo e encontre
+                        soluções para pneus, manutenção e cuidados
+                        automotivos.
+                    </p>
+
+                </div>
+
+                <a href="#contato" class="btn">
+                    Ver contato
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTATO -->
+
+    <section id="contato">
+
+        <div class="container">
+
+            <div class="section-head">
+
+                <div class="label">
+                    Localização
+                </div>
+
+                <h2>
+                    Encontre a Grid Centro Automotivo
+                </h2>
+
+                <p>
+                    Estamos em Caçador, Santa Catarina.
+                </p>
+
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+
+                    <h3>
+                        Empresa
+                    </h3>
+
+                    <div class="contact-row">
+
+                        <strong>
+                            CNPJ
+                        </strong>
+
+                        49.760.497/0001-35
+
+                    </div>
+
+                    <div class="contact-row">
+
+                        <strong>
+                            Telefone
+                        </strong>
+
+                        (49) 3960-1819
+
+                    </div>
+
+                    <div class="contact-row">
+
+                        <strong>
+                            E-mail
+                        </strong>
+
+                        gridcentroautomotivoltda@gmail.com
+
+                    </div>
+
+                </div>
+
+                <div class="contact-card">
+
+                    <h3>
+                        Endereço
+                    </h3>
+
+                    <div class="contact-row">
+
+                        <strong>
+                            Rodovia
+                        </strong>
+
+                        Fahdo Thome, 1736
+
+                    </div>
+
+                    <div class="contact-row">
+
+                        <strong>
+                            Bairro
+                        </strong>
+
+                        Dos Municípios
+
+                    </div>
+
+                    <div class="contact-row">
+
+                        <strong>
+                            Cidade / Estado
+                        </strong>
+
+                        Caçador - SC
+
+                    </div>
+
+                    <div class="contact-row">
+
+                        <strong>
+                            CEP
+                        </strong>
+
+                        89504-690
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <div class="footer-logo">
+                    Grid Centro Automotivo
+                </div>
+
+                <p>
+                    Pneus, manutenção e serviços automotivos
+                    em Caçador - Santa Catarina.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h4>Navegação</h4>
+
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#processo">Atendimento</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+
+            </div>
+
+            <div>
+
+                <h4>Empresa</h4>
+
+                <ul>
+                    <li>CNPJ: 49.760.497/0001-35</li>
+                    <li>Caçador - SC</li>
+                    <li>CEP: 89504-690</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            © <span id="year"></span>
+            Grid Centro Automotivo Ltda.
+            Todos os direitos reservados.
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- BOTÃO FLUTUANTE -->
+
+<a
+    href="https://wa.me/554939601819"
+    class="floating"
+    target="_blank"
+    rel="noopener"
+    aria-label="Falar pelo WhatsApp"
+    title="Falar pelo WhatsApp"
+>
+    ☎
+</a>
+
+<script>
+
+    const menu = document.getElementById("menu");
+    const navLinks = document.getElementById("navLinks");
+
+    menu.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+        });
+    });
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
